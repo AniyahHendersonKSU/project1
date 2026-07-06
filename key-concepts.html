@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading the Source | Key Concepts</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
 
+  <nav class="tabbar">
+    <div class="brand"><span class="dot"></span> analysis.site</div>
+    <a class="tab" href="index.html">home.html</a>
+    <a class="tab" href="html-analysis.html">html-analysis.html</a>
+    <a class="tab" href="css-analysis.html">css-analysis.html</a>
+    <a class="tab active" href="key-concepts.html">key-concepts.html</a>
+    <a class="tab" href="references.html">references.html</a>
+    <a class="tab" href="about.html">about.html</a>
+  </nav>
+
+  <!-- Each concept is one .card inside .concept-grid (CSS Grid, auto-fit
+       columns), so adding an 8th concept later just means adding another
+       .card div here — the grid reflows on its own. -->
+  <main>
+    <span class="eyebrow">Reference</span>
+    <h1>Key Concepts</h1>
+    <p>
+      Seven concepts that come up repeatedly across the HTML and CSS
+      analysis pages, explained on their own here for quick reference.
+    </p>
+
+    <div class="concept-grid">
+
+      <div class="card">
+        <h3>Semantic HTML</h3>
+        <p>
+          Using elements for what they mean, not just how they render.
+          <code>&lt;nav&gt;</code> and <code>&lt;section&gt;</code> tell a
+          browser or screen reader what a block of content <em>is</em>,
+          while <code>&lt;div&gt;</code> says nothing at all.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>CSS Selector Specificity</h3>
+        <p>
+          The rule set that decides which conflicting CSS rule wins:
+          inline styles beat IDs, IDs beat classes, classes beat plain
+          element selectors. Higher-specificity rules are harder to
+          override later.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>The Box Model</h3>
+        <p>
+          Every element is a box made of content, padding, border, and
+          margin, in that order from inside out. <code>box-sizing: border-box</code>
+          changes how width is calculated so padding and borders don't
+          enlarge the box.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Utility-First CSS</h3>
+        <p>
+          A framework style (used by W3.CSS, Tailwind, and others) where
+          small, single-purpose classes like <code>.w3-padding</code> are
+          composed directly in HTML, instead of writing one custom class
+          per component.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Flexbox</h3>
+        <p>
+          A one-dimensional CSS layout mode for arranging items in a row
+          or column, distributing space between them, and aligning them —
+          used on this site's navigation bar.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>CSS Grid</h3>
+        <p>
+          A two-dimensional layout system for arranging items into rows
+          <em>and</em> columns at once — used on this site for the overall
+          page structure and the key-concepts card layout above.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Responsive Design</h3>
+        <p>
+          Building a page so it adapts to different screen sizes, usually
+          via a viewport meta tag plus media queries or flexible units
+          (<code>%</code>, <code>fr</code>, <code>auto-fit</code>) instead
+          of fixed pixel widths.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    This is a class project for IT 3203, Kennesaw State University &mdash;
+    see the <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">class website</a>.
+  </footer>
+
+</div>
+</body>
+</html>
