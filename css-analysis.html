@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading the Source | CSS Analysis</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
 
+  <nav class="tabbar">
+    <div class="brand"><span class="dot"></span> analysis.site</div>
+    <a class="tab" href="index.html">home.html</a>
+    <a class="tab" href="html-analysis.html">html-analysis.html</a>
+    <a class="tab active" href="css-analysis.html">css-analysis.html</a>
+    <a class="tab" href="key-concepts.html">key-concepts.html</a>
+    <a class="tab" href="references.html">references.html</a>
+    <a class="tab" href="about.html">about.html</a>
+  </nav>
+
+  <!-- Topic page 2 of 2. Structure mirrors html-analysis.html on purpose:
+       intro paragraph, then numbered subsections, then a summary table
+       or list, so a reader can predict where to find things. -->
+  <main>
+    <span class="eyebrow">Topic 02</span>
+    <h1>CSS Analysis: Selectors, Layout &amp; Effects</h1>
+
+    <p>
+      Almost none of the template's visual design comes from a hand-written
+      CSS selector — it comes from applying W3.CSS's pre-built utility
+      classes directly in the HTML. Only nine lines of custom CSS appear
+      in the whole document. That single fact is the most important thing
+      to understand about how this template works, so it's the focus of
+      this page.
+    </p>
+
+    <h2>1. Utility-class selectors vs. hand-written selectors</h2>
+    <p>
+      A typical hand-rolled stylesheet selects elements by tag, class, ID,
+      or combinations of these, then groups related declarations together
+      — one rule for "card," one rule for "button," etc. W3.CSS inverts
+      this: instead of writing <code>.card { border: 1px solid #ccc; padding: 16px; }</code>
+      once, you compose several tiny classes on the element itself:
+      <code>class="w3-card w3-padding w3-white"</code>. The CSS selectors
+      themselves (inside w3.css, which the template only links to, never
+      edits) are simple single-class selectors like <code>.w3-card</code>,
+      <code>.w3-padding</code>, each responsible for exactly one property.
+    </p>
+
+    <div class="gutter">
+      <div class="row">
+        <div class="lines">01<br>02<br>03</div>
+        <div class="code">
+          &lt;div class="w3-row w3-center w3-card w3-padding"&gt;<br>
+          &nbsp;&nbsp;&lt;div class="w3-col s6 tablink"&gt;Eat&lt;/div&gt;<br>
+          &lt;/div&gt;
+        </div>
+      </div>
+    </div>
+
+    <p>
+      This is the "utility-first" approach to CSS. It trades stylesheet
+      readability for HTML predictability — you can guess what an element
+      looks like just by reading its class list, without ever opening the
+      CSS file. The cost shows up in the markup: that one
+      <code>&lt;div&gt;</code> above carries four classes to do a job that
+      a single custom class name could describe more clearly.
+    </p>
+
+    <h2>2. The custom CSS that <em>is</em> written, selector by selector</h2>
+    <table>
+      <thead>
+        <tr><th>Selector</th><th>Type</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>body, html</code></td><td>Type (grouped)</td><td>Forces full page height and sets the base font</td></tr>
+        <tr><td><code>.bgimg</code></td><td>Class</td><td>Positions and sizes the header's background photo</td></tr>
+        <tr><td><code>.menu</code></td><td>Class</td><td>Hides both tab panels by default (<code>display: none</code>)</td></tr>
+      </tbody>
+    </table>
+    <p>
+      That's the entire custom stylesheet — three selectors. Everything
+      else (colors, spacing, the responsive column grid, hover states) is
+      inherited from w3.css. This means the "layout design" of the page is
+      really a design decision made once, by the framework's authors, and
+      reused here rather than authored fresh.
+    </p>
+
+    <h2>3. Layout system: a 12-column float/inline-block grid</h2>
+    <p>
+      W3.CSS's grid predates modern CSS Grid and Flexbox. The nav bar uses
+      <code>w3-row</code> + four <code>w3-col s3</code> children — "s3"
+      meaning 3 of 12 columns on small screens, so four equal columns
+      exactly fill the row. It's effective and genuinely responsive (a
+      one-line media-query swap collapses columns on narrow viewports),
+      but it depends on precise column-count math rather than the more
+      flexible <code>flex: 1</code> or <code>grid-template-columns: repeat(...)</code>
+      approaches available in current CSS. This site you're reading now
+      uses real CSS Grid and Flexbox instead, partly to make that contrast
+      visible.
+    </p>
+
+    <h2>4. Special effects: grayscale, display toggling, and image tricks</h2>
+    <ul>
+      <li>
+        <strong><code>w3-grayscale</code> / <code>w3-grayscale-min</code>:</strong>
+        applies a CSS <code>filter: grayscale()</code> to the header photo
+        and the page background, then relies on <code>:hover</code> or
+        JS-free defaults to control intensity — a good example of a
+        pure-CSS visual effect with zero JavaScript.
+      </li>
+      <li>
+        <strong><code>w3-display-*</code> classes:</strong> position
+        the "Open 6am–5pm" tag, the centered "the Cafe" title, and the
+        address, all inside one <code>position: relative</code> container
+        using <code>position: absolute</code> variants — a CSS layout
+        technique (absolute positioning inside a relative parent) rather
+        than a framework invention, just packaged into reusable classes.
+      </li>
+      <li>
+        <strong>The Eat/Drink toggle</strong> is CSS's <code>display: none</code>
+        driven entirely by JavaScript class swapping, not a CSS-only
+        solution (no <code>:target</code> or checkbox hack) — meaning the
+        tabs won't work at all if JavaScript fails to load.
+      </li>
+    </ul>
+
+    <img src="https://www.w3schools.com/w3images/coffeehouse2.jpg"
+         alt="A second photo from the template's Menu section, showing a bright cafe counter with pastries on display"
+         style="margin: 1.5em 0; max-width: 500px;">
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: -0.8em;">
+      This image sits inside the Menu section using nothing but
+      <code>style="width:100%;max-width:1000px"</code> written inline —
+      another example of styling done in the HTML itself rather than
+      through a CSS selector, which ties back to the specificity point
+      below.
+    </p>
+
+    <h2>5. Specificity: mostly flat, one landmine</h2>
+    <p>
+      Because nearly every rule is a single-class selector at the same
+      specificity level, there's little fighting between rules — a real
+      benefit of the utility-class approach. The one place this breaks is
+      the inline <code>style="font-size:90px"</code> on the "the Cafe"
+      heading span: inline styles have higher specificity than any class,
+      so if you wanted to override that font size from the stylesheet
+      later, you'd have to fight the HTML itself, not just add a more
+      specific selector.
+    </p>
+
+    <blockquote>
+      Takeaway: a framework can make a page look finished with almost no
+      custom CSS, but that convenience is really "someone else already
+      wrote the selectors" — understanding what a class actually does
+      still requires reading the framework's source, not just the page's.
+    </blockquote>
+  </main>
+
+  <footer>
+    This is a class project for IT 3203, Kennesaw State University &mdash;
+    see the <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">class website</a>.
+  </footer>
+
+</div>
+</body>
+</html>
