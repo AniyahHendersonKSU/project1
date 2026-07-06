@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading the Source | Home</title>
+  <!-- Single shared stylesheet, per assignment requirement -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+
+  <!-- ============================================================
+       MAIN MENU (identical markup on every page — required by
+       assignment so navigation stays consistent site-wide)
+       ============================================================ -->
+  <nav class="tabbar">
+    <div class="brand"><span class="dot"></span> analysis.site</div>
+    <a class="tab active" href="index.html">home.html</a>
+    <a class="tab" href="html-analysis.html">html-analysis.html</a>
+    <a class="tab" href="css-analysis.html">css-analysis.html</a>
+    <a class="tab" href="key-concepts.html">key-concepts.html</a>
+    <a class="tab" href="references.html">references.html</a>
+    <a class="tab" href="about.html">about.html</a>
+  </nav>
+
+  <main>
+    <span class="eyebrow">IT 3203 &mdash; Web Development Project</span>
+    <h1>Reading the Source: An Analysis of HTML5 &amp; CSS in the W3.CSS "Cafe" Template</h1>
+
+    <p>
+      This site is a close reading of a real, publicly available web template —
+      the "Cafe" template distributed with the W3.CSS framework on
+      w3schools.com. Rather than treating a template as something to copy
+      and fill in, this project opens it up: what HTML5 elements does it
+      choose and why, how does its CSS actually select and style those
+      elements, and what does that tell us about how the framework
+      (and the developer using it) thinks about layout and design?
+    </p>
+
+    <p>
+      The goal isn't to praise or dismiss the template, but to understand
+      it well enough to explain its decisions to someone else — including
+      the places where it takes shortcuts, repeats itself, or relies on
+      inline styles instead of the stylesheet doing the work.
+    </p>
+
+    <!-- Stat strip: real counts from the source, not placeholder metrics.
+         Doubles as a preview of what the two topic pages dig into. -->
+    <div class="stat-strip">
+      <div class="stat"><span class="num">9</span><span class="label">lines of custom CSS</span></div>
+      <div class="stat"><span class="num">23</span><span class="label">&lt;div&gt; elements</span></div>
+      <div class="stat"><span class="num">2</span><span class="label">HTML5 landmark tags used</span></div>
+      <div class="stat"><span class="num">0</span><span class="label">images with alt text</span></div>
+    </div>
+
+    <h2>Key Terms</h2>
+    <div class="key-terms">
+      <span>semantic HTML</span>
+      <span>CSS selectors</span>
+      <span>specificity</span>
+      <span>box model</span>
+      <span>flexbox</span>
+      <span>CSS grid</span>
+      <span>responsive design</span>
+      <span>utility-first CSS</span>
+    </div>
+
+    <h2>Table of Contents</h2>
+    <div class="toc">
+      <a href="html-analysis.html"><span class="num">01</span>HTML Analysis — structure, semantics &amp; tag choices</a>
+      <a href="css-analysis.html"><span class="num">02</span>CSS Analysis — selectors, layout &amp; special effects</a>
+      <a href="key-concepts.html"><span class="num">03</span>Key Concepts — 7 ideas this template put into practice</a>
+      <a href="references.html"><span class="num">04</span>References &amp; Resources</a>
+      <a href="about.html"><span class="num">05</span>About This Project</a>
+    </div>
+  </main>
+
+  <footer>
+    This is a class project for IT 3203, Kennesaw State University &mdash;
+    see the <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">class website</a>.
+  </footer>
+
+</div>
+</body>
+</html>
