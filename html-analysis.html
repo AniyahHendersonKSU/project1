@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reading the Source | HTML Analysis</title>
+  <title>Analyzing the Cafe | HTML Analysis</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 </head>
@@ -20,17 +20,14 @@
     <a class="tab" href="about.html">about.html</a>
   </nav>
 
-  <!-- Topic page 1 of 2. Each numbered <h2> below is one self-contained
-       finding, closed out by a <blockquote> "takeaway" so a reader
-       skimming just the blockquotes gets the whole page's argument. -->
   <main>
     <span class="eyebrow">Topic 01</span>
     <h1>HTML Analysis: Structure &amp; Semantics</h1>
 
     <p>
-      The Cafe template is short — one HTML file, no separate pages — but
-      that makes it a good specimen: every structural decision is visible
-      in a single scroll. This page focuses on three things: how it uses
+      The Cafe template is a short HTML file, no separate pages, but
+      every structural decision is visible in a single scroll. 
+      This page focuses on three things: how it uses
       (and doesn't use) HTML5 semantic elements, how <code>id</code>
       attributes are doing double duty as both navigation anchors and
       JavaScript hooks, and how the document is organized top to bottom.
@@ -46,10 +43,6 @@
       <code>&lt;div&gt;</code> soup. The template uses exactly two of these:
     </p>
 
-    <!-- This block has id="gutter-demo" so the #gutter-demo rule in
-         style.css actually targets a real element (an ID selector,
-         one of the 3 required selector types), on top of the .gutter
-         class selector it shares with every other code sample on the site. -->
     <div class="gutter" id="gutter-demo">
       <div class="row">
         <div class="lines">01<br>02<br>03<br>04<br>05</div>
@@ -63,15 +56,13 @@
       </div>
     </div>
 
-    <!-- Screenshot of the actual asset the template ships with, used here
-         as visual evidence for the "no alt text" critique below. -->
     <img src="https://www.w3schools.com/w3images/coffeehouse.jpg"
          alt="The header background photo used in the original W3.CSS Cafe template, showing a dim, moody coffeehouse interior"
          style="margin: 1.2em 0; max-width: 500px;">
     <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: -0.8em;">
       This is the exact <code>&lt;header&gt;</code> background photo from the
-      template. Notice this version — served here with proper
-      <code>alt</code> text — is the accessible version of the same image
+      template. Notice this version served here with proper
+      <code>alt</code> text is the accessible version of the same image
       the template ships without any.
     </p>
 
@@ -82,15 +73,12 @@
       <code>&lt;nav&gt;</code>. Each content block — About, Menu,
       Where to Find Us — is its own <code>&lt;div class="w3-container"&gt;</code>
       rather than a <code>&lt;section&gt;</code>. This isn't a functional
-      bug; visually nothing changes. But it's a missed opportunity: a
-      screen reader user gets no "landmark" announcement for these
-      regions, and there's no structural signal that these three blocks
-      are siblings at the same level of importance.
+      bug because visually nothing changes. 
     </p>
 
     <blockquote>
       Takeaway: HTML5 semantic tags are additive, not automatic. Using
-      W3.CSS (or any CSS framework) doesn't give you semantics for free —
+      W3.CSS (or any CSS framework) doesn't give you semantics for free because
       you still have to choose <code>&lt;nav&gt;</code> over
       <code>&lt;div&gt;</code> yourself.
     </blockquote>
@@ -110,8 +98,8 @@
       <code>document.getElementById()</code> in the inline
       <code>&lt;script&gt;</code>. So <code>id</code> is simultaneously an
       anchor target for the browser and a hook for JavaScript. That's
-      common practice, but it also means the two concerns — navigation
-      and behavior — are entangled in the same attribute, which can get
+      common practice, but it also means the two concerns which are navigation
+      and behavior are entangled in the same attribute, which can get
       confusing to maintain as a page grows past this size.
     </p>
 
@@ -148,7 +136,7 @@
       <li>
         <strong>Heading hierarchy is broken.</strong> Every section title
         ("ABOUT THE CAFE", "THE MENU") is an <code>&lt;h5&gt;</code>, and
-        there is no <code>&lt;h1&gt;</code> anywhere in the document — the
+        there is no <code>&lt;h1&gt;</code> anywhere in the document, the
         big "the Cafe" text in the header is just a styled
         <code>&lt;span&gt;</code>. That's chosen purely for the font-size
         W3.CSS gives <code>h5</code> by default, not because these are
@@ -159,14 +147,14 @@
         <strong>No <code>alt</code> text on any image.</strong> Three
         <code>&lt;img&gt;</code> elements (coffee shop photo, coffeehouse
         photo, map) all ship without <code>alt</code> attributes, so a
-        screen reader has nothing to announce for any of them — a real
+        screen reader has nothing to announce for any of them, a real
         accessibility gap in an otherwise clean template.
       </li>
     </ul>
   </main>
 
   <footer>
-    This is a class project for IT 3203, Kennesaw State University &mdash;
+    This is a class project for IT 3203, Web Development &mdash;
     see the <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">class website</a>.
   </footer>
 
