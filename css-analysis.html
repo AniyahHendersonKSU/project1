@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reading the Source | CSS Analysis</title>
+  <title>Analyzing the Cafe | CSS Analysis</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 </head>
@@ -20,27 +20,23 @@
     <a class="tab" href="about.html">about.html</a>
   </nav>
 
-  <!-- Topic page 2 of 2. Structure mirrors html-analysis.html on purpose:
-       intro paragraph, then numbered subsections, then a summary table
-       or list, so a reader can predict where to find things. -->
   <main>
     <span class="eyebrow">Topic 02</span>
     <h1>CSS Analysis: Selectors, Layout &amp; Effects</h1>
 
     <p>
-      Almost none of the template's visual design comes from a hand-written
-      CSS selector — it comes from applying W3.CSS's pre-built utility
+      After researching I see that none of the template's visual design comes from a hand-written
+      CSS selector instead it comes from applying W3.CSS's pre-built utility
       classes directly in the HTML. Only nine lines of custom CSS appear
       in the whole document. That single fact is the most important thing
-      to understand about how this template works, so it's the focus of
-      this page.
+      to understand about how this template works.
     </p>
 
     <h2>1. Utility-class selectors vs. hand-written selectors</h2>
     <p>
       A typical hand-rolled stylesheet selects elements by tag, class, ID,
       or combinations of these, then groups related declarations together
-      — one rule for "card," one rule for "button," etc. W3.CSS inverts
+      one rule for "card," one rule for "button," etc. W3.CSS inverts
       this: instead of writing <code>.card { border: 1px solid #ccc; padding: 16px; }</code>
       once, you compose several tiny classes on the element itself:
       <code>class="w3-card w3-padding w3-white"</code>. The CSS selectors
@@ -62,7 +58,7 @@
 
     <p>
       This is the "utility-first" approach to CSS. It trades stylesheet
-      readability for HTML predictability — you can guess what an element
+      readability for HTML predictability but you can guess what an element
       looks like just by reading its class list, without ever opening the
       CSS file. The cost shows up in the markup: that one
       <code>&lt;div&gt;</code> above carries four classes to do a job that
@@ -81,7 +77,7 @@
       </tbody>
     </table>
     <p>
-      That's the entire custom stylesheet — three selectors. Everything
+      That's the entire custom stylesheet. Just three selectors. Everything
       else (colors, spacing, the responsive column grid, hover states) is
       inherited from w3.css. This means the "layout design" of the page is
       really a design decision made once, by the framework's authors, and
@@ -132,7 +128,7 @@
          style="margin: 1.5em 0; max-width: 500px;">
     <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: -0.8em;">
       This image sits inside the Menu section using nothing but
-      <code>style="width:100%;max-width:1000px"</code> written inline —
+      <code>style="width:100%;max-width:1000px"</code> written inline which is
       another example of styling done in the HTML itself rather than
       through a CSS selector, which ties back to the specificity point
       below.
@@ -141,7 +137,7 @@
     <h2>5. Specificity: mostly flat, one landmine</h2>
     <p>
       Because nearly every rule is a single-class selector at the same
-      specificity level, there's little fighting between rules — a real
+      specificity level, there's little fighting between rules, a real
       benefit of the utility-class approach. The one place this breaks is
       the inline <code>style="font-size:90px"</code> on the "the Cafe"
       heading span: inline styles have higher specificity than any class,
@@ -152,14 +148,13 @@
 
     <blockquote>
       Takeaway: a framework can make a page look finished with almost no
-      custom CSS, but that convenience is really "someone else already
-      wrote the selectors" — understanding what a class actually does
+      custom CSS, but thatunderstanding what a class actually does
       still requires reading the framework's source, not just the page's.
     </blockquote>
   </main>
 
   <footer>
-    This is a class project for IT 3203, Kennesaw State University &mdash;
+    This is a class project for IT 3203, Web Development &mdash;
     see the <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">class website</a>.
   </footer>
 
