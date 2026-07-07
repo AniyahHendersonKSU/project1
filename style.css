@@ -1,21 +1,3 @@
-/* ===================================================================
-   style.css
-   Shared stylesheet for: "Reading the Source" — an analysis of HTML5
-   and CSS practices in the W3.CSS "Cafe" template.
-
-   DESIGN CONCEPT
-   The whole subject of this site is "reading someone else's code," so
-   the visual language borrows from a code editor: a dark canvas, a
-   tab-style navigation bar (like open editor tabs), and a thin
-   line-number "gutter" beside major sections, echoing how a developer
-   scans source line by line. This is the site's signature element —
-   used once per section, not everywhere, to keep it a detail rather
-   than a gimmick.
-
-   COLOR TOKENS (kept as CSS custom properties = one of our 3 required
-   selector categories is demonstrated below with :root, a pseudo-class
-   selector target)
-   =================================================================== */
 
 :root {
   --bg:        #1b1e24;   /* app background   */
@@ -49,8 +31,7 @@ body, html {
   color: var(--text);
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
   line-height: 1.65;
-  /* Faint dot-grid texture, like graph paper behind a code editor —
-     opacity kept low so it reads as texture, not decoration. */
+ 
   background-color: var(--bg);
   background-image: radial-gradient(circle, #2a2f38 1px, transparent 1px);
   background-size: 22px 22px;
@@ -109,7 +90,6 @@ a {
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 
-/* pseudo-class selector: hover effect required by assignment */
 a:hover {
   color: var(--accent-amber);
   border-bottom: 1px solid var(--accent-amber);
@@ -145,20 +125,13 @@ img {
   border: 1px solid var(--border);
 }
 
-/* -------------------------------------------------------------
-   2. PAGE GRID  — CSS Grid required layout
-      Every page uses the same three-row grid: tab-nav / main / footer
-   ------------------------------------------------------------- */
 .page {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 
-/* -------------------------------------------------------------
-   3. TAB-BAR NAVIGATION — Flexbox required layout
-      Styled like open editor tabs; the current page's tab is "active"
-   ------------------------------------------------------------- */
+
 .tabbar {
   display: flex;
   flex-wrap: wrap;
@@ -189,7 +162,6 @@ img {
   display: inline-block;
 }
 
-/* class selector — required category #2 (in addition to element & ID) */
 .tab {
   padding: 0.9em 1.2em;
   font-family: "JetBrains Mono", monospace;
@@ -211,9 +183,7 @@ img {
   border-bottom: 3px solid var(--accent-amber);
 }
 
-/* -------------------------------------------------------------
-   4. MAIN CONTENT AREA
-   ------------------------------------------------------------- */
+
 main {
   max-width: 880px;
   margin: 0 auto;
@@ -221,9 +191,6 @@ main {
   width: 100%;
 }
 
-/* Signature element: the "gutter" — a thin strip of decorative line
-   numbers beside a section, echoing a code editor's left margin.
-   ID selector used here — required category #3 (element, class, ID) */
 #gutter-demo,
 .gutter {
   display: flex;
@@ -238,9 +205,6 @@ main {
   overflow: hidden;
 }
 
-/* Traffic-light window chrome, like a terminal/editor title bar —
-   the site's one deliberate ornamental flourish, used consistently
-   everywhere code is shown, nowhere else. */
 .gutter::before {
   content: "";
   display: block;
@@ -278,9 +242,7 @@ main {
   overflow-x: auto;
 }
 
-/* -------------------------------------------------------------
-   5. REUSABLE COMPONENTS
-   ------------------------------------------------------------- */
+
 .eyebrow {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.8rem;
@@ -310,7 +272,7 @@ main {
   box-shadow: var(--shadow-md);
 }
 
-/* Key concepts grid — second demonstration of CSS Grid */
+
 .concept-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -422,9 +384,6 @@ footer a {
   color: var(--accent-blue);
 }
 
-/* -------------------------------------------------------------
-   6. RESPONSIVE ADJUSTMENTS
-   ------------------------------------------------------------- */
 @media (max-width: 600px) {
   h1 { font-size: 1.8rem; }
   .tabbar .brand { display: none; }
@@ -438,12 +397,11 @@ footer a {
   }
 }
 
-/* Respect reduced motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
 
-/* Visible keyboard focus — required accessibility floor */
 a:focus-visible,
 .tab:focus-visible {
   outline: 2px solid var(--accent-blue);
