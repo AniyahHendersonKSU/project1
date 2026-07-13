@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,233 +9,255 @@
     <!-- Shared stylesheet -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Quiz JavaScript -->
+    <!-- Quiz functionality -->
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-    <h1>Reading the Source</h1>
-    <p>Test Your Knowledge of HTML & CSS</p>
-</header>
+<div class="page">
 
-<!-- Main Navigation -->
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="html-analysis.html">HTML Analysis</a></li>
-        <li><a href="css-analysis.html">CSS Analysis</a></li>
-        <li><a href="key-concepts.html">Key Concepts</a></li>
-        <li><a href="quiz.html" class="active">Quiz</a></li>
-        <li><a href="references.html">References</a></li>
-        <li><a href="about.html">About</a></li>
-    </ul>
-</nav>
+    <!-- =========================
+         Navigation
+    ========================== -->
 
-<main>
+    <nav class="tabbar">
 
-<section class="quiz-container">
+        <div class="brand">
+            <span class="dot"></span>
+            Reading the Source
+        </div>
 
-<h2>Knowledge Check</h2>
+        <a class="tab" href="index.html">Home</a>
+        <a class="tab" href="html-analysis.html">HTML Analysis</a>
+        <a class="tab" href="css-analysis.html">CSS Analysis</a>
+        <a class="tab" href="key-concepts.html">Key Concepts</a>
+        <a class="tab active" href="quiz.html">Quiz</a>
+        <a class="tab" href="references.html">References</a>
+        <a class="tab" href="about.html">About</a>
 
-<p>
-Complete the quiz below to assess your understanding of the HTML and CSS
-concepts discussed throughout this website.
-</p>
+    </nav>
 
-<form id="quizForm">
+    <!-- =========================
+         Main Content
+    ========================== -->
 
-<!-- ============================= -->
-<!-- Question 1 -->
-<!-- ============================= -->
+    <main>
 
-<div class="question-card">
+        <span class="eyebrow">
+            Self Assessment
+        </span>
 
-<h3>1. Fill in the Blank</h3>
+        <h1>HTML & CSS Knowledge Check</h1>
 
-<label for="htmlAnswer">
-HTML stands for:
-</label>
+        <p class="quiz-intro">
+            Test your understanding of the HTML and CSS concepts presented throughout this website.
+            Complete the questions below and receive immediate feedback on your performance.
+        </p>
 
-<input
-type="text"
-id="htmlAnswer"
-name="htmlAnswer"
-placeholder="Type your answer here">
+        <!-- Quiz Form -->
+
+        <form id="quizForm" class="quiz-form">
+
+            <!-- Question 1 -->
+
+            <section class="question-card">
+
+                <h3>Question 1</h3>
+
+                <p>
+                    <strong>Fill in the Blank</strong>
+                </p>
+
+                <label for="htmlAnswer">
+                    HTML stands for:
+                </label>
+
+                <input
+                    type="text"
+                    id="htmlAnswer"
+                    name="htmlAnswer"
+                    placeholder="Enter your answer">
+
+            </section>
+
+            <!-- Question 2 -->
+
+            <section class="question-card">
+
+                <h3>Question 2</h3>
+
+                <p>
+                    Which HTML element is primarily used for navigation links?
+                </p>
+
+                <label>
+                    <input type="radio" name="q2" value="article">
+                    &lt;article&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="nav">
+                    &lt;nav&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="footer">
+                    &lt;footer&gt;
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="section">
+                    &lt;section&gt;
+                </label>
+
+            </section>
+
+            <!-- Question 3 -->
+
+            <section class="question-card">
+
+                <h3>Question 3</h3>
+
+                <p>
+                    Which CSS property changes the color of text?
+                </p>
+
+                <label>
+                    <input type="radio" name="q3" value="background">
+                    background-color
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="color">
+                    color
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="fontsize">
+                    font-size
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="margin">
+                    margin
+                </label>
+
+            </section>
+
+            <!-- Question 4 -->
+
+            <section class="question-card">
+
+                <h3>Question 4</h3>
+
+                <p>
+                    Which CSS layout method is commonly used to build responsive layouts?
+                </p>
+
+                <label>
+                    <input type="radio" name="q4" value="tables">
+                    Tables
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="frames">
+                    Frames
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="flexbox">
+                    Flexbox
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="floats">
+                    Floats
+                </label>
+
+            </section>
+
+            <!-- Question 5 -->
+
+            <section class="question-card">
+
+                <h3>Question 5</h3>
+
+                <p>
+                    Select <strong>ALL</strong> semantic HTML elements.
+                </p>
+
+                <label>
+                    <input type="checkbox" name="q5" value="header">
+                    &lt;header&gt;
+                </label>
+
+                <label>
+                    <input type="checkbox" name="q5" value="main">
+                    &lt;main&gt;
+                </label>
+
+                <label>
+                    <input type="checkbox" name="q5" value="section">
+                    &lt;section&gt;
+                </label>
+
+                <label>
+                    <input type="checkbox" name="q5" value="font">
+                    &lt;font&gt;
+                </label>
+
+                <label>
+                    <input type="checkbox" name="q5" value="center">
+                    &lt;center&gt;
+                </label>
+
+            </section>
+
+            <!-- Buttons -->
+
+            <div class="quiz-buttons">
+
+                <button type="submit">
+                    Submit Quiz
+                </button>
+
+                <button type="reset" id="resetBtn">
+                    Reset Quiz
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- Quiz Results -->
+
+        <section id="results">
+
+            <h2>Quiz Results</h2>
+
+            <div id="resultsContent">
+
+                <!-- JavaScript inserts results here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Analyzing the Cafe | HTML & CSS Educational Website
+        </p>
+
+    </footer>
 
 </div>
-
-<!-- ============================= -->
-<!-- Question 2 -->
-<!-- ============================= -->
-
-<div class="question-card">
-
-<h3>2. Multiple Choice</h3>
-
-<p>Which HTML element is primarily used for navigation links?</p>
-
-<label>
-<input type="radio" name="q2" value="article">
-&lt;article&gt;
-</label>
-
-<label>
-<input type="radio" name="q2" value="nav">
-&lt;nav&gt;
-</label>
-
-<label>
-<input type="radio" name="q2" value="footer">
-&lt;footer&gt;
-</label>
-
-<label>
-<input type="radio" name="q2" value="section">
-&lt;section&gt;
-</label>
-
-</div>
-
-<!-- ============================= -->
-<!-- Question 3 -->
-<!-- ============================= -->
-
-<div class="question-card">
-
-<h3>3. Multiple Choice</h3>
-
-<p>Which CSS property changes the text color?</p>
-
-<label>
-<input type="radio" name="q3" value="background">
-background-color
-</label>
-
-<label>
-<input type="radio" name="q3" value="color">
-color
-</label>
-
-<label>
-<input type="radio" name="q3" value="fontsize">
-font-size
-</label>
-
-<label>
-<input type="radio" name="q3" value="margin">
-margin
-</label>
-
-</div>
-
-<!-- ============================= -->
-<!-- Question 4 -->
-<!-- ============================= -->
-
-<div class="question-card">
-
-<h3>4. Multiple Choice</h3>
-
-<p>Which CSS layout method is commonly used for responsive web layouts?</p>
-
-<label>
-<input type="radio" name="q4" value="tables">
-Tables
-</label>
-
-<label>
-<input type="radio" name="q4" value="frames">
-Frames
-</label>
-
-<label>
-<input type="radio" name="q4" value="flexbox">
-Flexbox
-</label>
-
-<label>
-<input type="radio" name="q4" value="float">
-Floats
-</label>
-
-</div>
-
-<!-- ============================= -->
-<!-- Question 5 -->
-<!-- ============================= -->
-
-<div class="question-card">
-
-<h3>5. Multi-Selection</h3>
-
-<p>Select ALL semantic HTML elements.</p>
-
-<label>
-<input type="checkbox" name="q5" value="header">
-&lt;header&gt;
-</label>
-
-<label>
-<input type="checkbox" name="q5" value="main">
-&lt;main&gt;
-</label>
-
-<label>
-<input type="checkbox" name="q5" value="section">
-&lt;section&gt;
-</label>
-
-<label>
-<input type="checkbox" name="q5" value="font">
-&lt;font&gt;
-</label>
-
-<label>
-<input type="checkbox" name="q5" value="center">
-&lt;center&gt;
-</label>
-
-</div>
-
-<!-- Buttons -->
-
-<div class="button-group">
-
-<button type="submit" class="quiz-btn">
-Submit Quiz
-</button>
-
-<button type="reset" id="resetBtn" class="quiz-btn">
-Reset Quiz
-</button>
-
-</div>
-
-</form>
-
-<!-- Results appear here after grading -->
-
-<section id="results" class="results-box">
-
-<h2>Quiz Results</h2>
-
-<div id="resultsContent"></div>
-
-</section>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>
-© 2026 Reading the Source | HTML & CSS Educational Website
-</p>
-
-</footer>
 
 </body>
+
 </html>
