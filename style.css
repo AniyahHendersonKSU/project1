@@ -408,3 +408,201 @@ a:focus-visible,
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+
+/* ==========================================================
+   QUIZ PAGE
+   ========================================================== */
+
+.quiz-intro {
+    margin-bottom: var(--space-3);
+}
+
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.6em;
+    box-shadow: var(--shadow-sm);
+    transition: 0.2s ease;
+}
+
+.question-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-md);
+}
+
+.question-card h3 {
+    margin-top: 0;
+    color: var(--accent-amber);
+}
+
+.question-card p {
+    margin-bottom: 1em;
+}
+
+/* Text box */
+
+.question-card input[type="text"]{
+    width:100%;
+    padding:0.8em;
+    margin-top:.6em;
+
+    background:var(--bg);
+    color:var(--text);
+
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+
+    font-size:1rem;
+}
+
+.question-card input[type="text"]:focus{
+    outline:none;
+    border-color:var(--accent-blue);
+}
+
+/* Radio + Checkbox */
+
+.question-card label{
+    display:block;
+    padding:.45em 0;
+    cursor:pointer;
+}
+
+.question-card input[type="radio"],
+.question-card input[type="checkbox"]{
+    margin-right:.6em;
+    accent-color:var(--accent-blue);
+}
+
+/* Buttons */
+
+.quiz-buttons{
+    display:flex;
+    gap:1em;
+    margin-top:2em;
+}
+
+.quiz-buttons button{
+
+    padding:.9em 1.6em;
+
+    border:none;
+    border-radius:var(--radius);
+
+    font-family:"JetBrains Mono", monospace;
+    font-size:.9rem;
+
+    cursor:pointer;
+
+    background:var(--accent-blue);
+    color:#fff;
+
+    transition:.2s;
+}
+
+.quiz-buttons button:hover{
+
+    background:var(--accent-amber);
+    color:#111;
+
+}
+
+/* Results */
+
+#results{
+
+    display:none;
+
+    margin-top:2.5em;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:1.8em;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+#results h2{
+    margin-top:0;
+    border:none;
+    padding:0;
+}
+
+.score{
+
+    font-size:1.3rem;
+    font-weight:bold;
+    margin-bottom:1em;
+
+}
+
+.pass{
+    color:var(--accent-green);
+}
+
+.fail{
+    color:#ff7070;
+}
+
+.result-card{
+
+    padding:1em;
+
+    margin:1em 0;
+
+    border-left:4px solid var(--border);
+
+    background:rgba(255,255,255,.02);
+
+}
+
+.correct{
+
+    color:var(--accent-green);
+
+}
+
+.incorrect{
+
+    color:#ff7070;
+
+}
+
+.correct-answer{
+
+    color:var(--accent-amber);
+
+    font-family:"JetBrains Mono", monospace;
+
+    margin-top:.4em;
+
+}
+
+@media(max-width:700px){
+
+.quiz-buttons{
+
+    flex-direction:column;
+
+}
+
+.quiz-buttons button{
+
+    width:100%;
+
+}
+
+}
