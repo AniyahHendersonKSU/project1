@@ -410,11 +410,29 @@ footer a {
     }
 
     main{
-    max-width:100%;
-    width:100%;
-    padding:1rem;
+        max-width:100%;
+        width:100%;
+        padding:1rem;
     }
 
+    body{
+        font-size:16px;
+    }
+
+    table{
+        font-size:.85rem;
+    }
+
+    img{
+        width:100%;
+        height:auto;
+    }
+
+    .tab{
+         padding:1rem;
+         font-size:.95rem;
+    }
+  
     .tabbar{
 
         flex-direction:column;
