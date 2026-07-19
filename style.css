@@ -687,34 +687,29 @@ a:focus-visible,
 
 @media (max-width:900px){
 
-main{
+    main{
+        max-width:100%;
+        padding:2em;
+    }
 
-    max-width:100%;
+    .stat-strip{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-    padding:2em;
-
-}
-
-.stat-strip{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-@media(max-width:500px){
-
-.stat-strip{
-
-    grid-template-columns:1fr;
+    .concept-grid{
+        grid-template-columns:1fr;
+    }
 
 }
 
-}
-  
-.concept-grid{
+/* ==========================================
+   Small Phones
+========================================== */
 
-    grid-template-columns:1fr;
+@media (max-width:500px){
 
-}
+    .stat-strip{
+        grid-template-columns:1fr;
+    }
 
 }
