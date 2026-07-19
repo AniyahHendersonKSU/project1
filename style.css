@@ -653,4 +653,62 @@ a:focus-visible,
 
 }
 
+.question-card{
+
+    padding:1.2em;
+
+}
+
+.question-card label{
+
+    padding:.8em 0;
+
+}
+
+.question-card input[type="radio"],
+.question-card input[type="checkbox"]{
+
+    transform:scale(1.2);
+
+}
+
+}
+
+
+/* ==========================================
+   Tablet Layout
+========================================== */
+
+@media (max-width:900px){
+
+main{
+
+    max-width:100%;
+
+    padding:2em;
+
+}
+
+.stat-strip{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+@media(max-width:500px){
+
+.stat-strip{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+  
+.concept-grid{
+
+    grid-template-columns:1fr;
+
+}
+
 }
