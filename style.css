@@ -410,7 +410,9 @@ footer a {
     }
 
     main{
-        padding:1.25em;
+    max-width:100%;
+    width:100%;
+    padding:1rem;
     }
 
     .tabbar{
