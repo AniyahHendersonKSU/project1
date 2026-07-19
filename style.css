@@ -126,11 +126,14 @@ tr:hover td {
 }
 
 img {
+  display: block;
   max-width: 100%;
+  height: auto;
+  margin: 1.5em auto;
+
   border-radius: var(--radius);
   border: 1px solid var(--border);
 }
-
 .page {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -390,19 +393,58 @@ footer a {
   color: var(--accent-blue);
 }
 
-@media (max-width: 600px) {
-  h1 { font-size: 1.8rem; }
-  .tabbar .brand { display: none; }
-  .gutter { flex-direction: column; }
-  .gutter .lines {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding-right: 0;
-    padding-bottom: 0.5em;
-    text-align: left;
-  }
-}
+@media (max-width:600px){
 
+    h1{
+        font-size:1.8rem;
+    }
+
+    h2{
+        font-size:1.3rem;
+    }
+
+    main{
+        padding:1.25em;
+    }
+
+    .tabbar{
+
+        flex-direction:column;
+
+    }
+
+    .tabbar .brand{
+
+        display:none;
+
+    }
+
+    .tab{
+
+        border-right:none;
+        text-align:center;
+
+    }
+
+    .gutter{
+
+        flex-direction:column;
+
+    }
+
+    .gutter .lines{
+
+        border-right:none;
+        border-bottom:1px solid var(--border);
+
+        padding-right:0;
+        padding-bottom:.5em;
+
+        text-align:left;
+
+    }
+
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
