@@ -381,6 +381,12 @@ blockquote {
   font-style: italic;
 }
 
+.image-caption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: -0.8em;
+}
+
 footer {
   border-top: 1px solid var(--border);
   padding: 1.6em 1.5em;
